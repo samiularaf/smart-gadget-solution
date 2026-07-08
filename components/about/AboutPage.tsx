@@ -195,10 +195,10 @@ export function AboutPage() {
             Ready to repair your device?
           </h2>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <Button href="/get-quote" showArrow>
+            <Button href="/contact" showArrow>
               Get Free Quote
             </Button>
-            <Button href="tel:+10000000000" variant="secondary" className="gap-2">
+            <Button href="tel:+16513736692" variant="secondary" className="gap-2">
               <PhoneCall className="size-4" aria-hidden="true" />
               Call Now
             </Button>

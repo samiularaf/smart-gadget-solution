@@ -28,6 +28,7 @@ const stats = [
   { value: "10+", label: "Years Experience" },
   { value: "5000+", label: "Devices Repaired" },
   { value: "98%", label: "Customer Satisfaction" },
+  { value: "90-Day", label: "Warranty" },
 ];
 
 const floatingShapes = [
@@ -97,14 +98,14 @@ export function HeroSection() {
             className="mt-8 flex flex-col gap-3 sm:flex-row"
           >
             <Link
-              href="/get-quote"
+              href="/contact"
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-brand-primary shadow-glow transition duration-200 hover:-translate-y-0.5 hover:bg-brand-light"
             >
               Get Free Quote
               <ArrowRight className="size-4" aria-hidden="true" />
             </Link>
             <a
-              href="tel:+10000000000"
+              href="tel:+16513736692"
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/25 bg-white/12 px-6 py-3 text-sm font-bold text-white shadow-soft backdrop-blur-xl transition duration-200 hover:-translate-y-0.5 hover:bg-white/18"
             >
               <PhoneCall className="size-4" aria-hidden="true" />
@@ -168,7 +169,7 @@ export function HeroSection() {
           initial={{ y: 22 }}
           animate={{ y: 0 }}
           transition={{ delay: 0.42, duration: 0.6 }}
-          className="grid gap-3 rounded-[1.75rem] border border-white/18 bg-white/12 p-3 shadow-soft backdrop-blur-xl sm:grid-cols-3 lg:col-span-2"
+          className="grid gap-3 rounded-[1.75rem] border border-white/18 bg-white/12 p-3 shadow-soft backdrop-blur-xl sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4"
         >
           {stats.map((stat) => (
             <div

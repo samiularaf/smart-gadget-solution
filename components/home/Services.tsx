@@ -16,42 +16,42 @@ import { Section } from "@/components/ui/section";
 const services = [
   {
     title: "Phone Repair",
-    href: "/services/phone-repair",
+    href: "/services",
     description:
       "Screen replacements, battery issues, charging problems, and water damage repairs for today's most popular phones.",
     Icon: Smartphone,
   },
   {
     title: "Tablet Repair",
-    href: "/services/tablet-repair",
+    href: "/services",
     description:
       "Reliable tablet repairs for cracked glass, touch issues, battery failures, software problems, and charging ports.",
     Icon: Tablet,
   },
   {
     title: "Laptop Repair",
-    href: "/services/laptop-repair",
+    href: "/services",
     description:
       "Professional laptop diagnostics and repair for hardware failures, slow performance, displays, keyboards, and storage.",
     Icon: Laptop,
   },
   {
     title: "Gaming Console Repair",
-    href: "/services/gaming-console-repair",
+    href: "/services",
     description:
       "Console troubleshooting for power issues, overheating, HDMI ports, storage errors, controller pairing, and system faults.",
     Icon: Gamepad2,
   },
   {
     title: "Data Recovery",
-    href: "/services/data-recovery",
+    href: "/services",
     description:
       "Careful recovery support for photos, documents, and important files from damaged phones, laptops, and storage devices.",
     Icon: HardDriveDownload,
   },
   {
     title: "Diagnostics & Maintenance",
-    href: "/services/diagnostics-maintenance",
+    href: "/services",
     description:
       "Detailed device inspections, tune-ups, software checks, cleaning, and maintenance to keep your technology running well.",
     Icon: SearchCheck,

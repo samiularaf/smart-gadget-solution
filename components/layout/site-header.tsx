@@ -17,7 +17,6 @@ const navItems: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
   { label: "About", href: "/about" },
-  { label: "Reviews", href: "/reviews" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -85,7 +84,7 @@ export function SiteHeader() {
 
           <div className="flex items-center gap-2">
             <a
-              href="tel:+10000000000"
+              href="tel:+16513736692"
               className="hidden items-center gap-2 rounded-full bg-brand-primary px-4 py-2.5 text-sm font-bold text-white shadow-glow transition duration-200 hover:bg-brand-dark-blue md:inline-flex"
             >
               <Phone className="size-4" aria-hidden="true" />

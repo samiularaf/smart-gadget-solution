@@ -6,9 +6,8 @@ import { Container } from "@/components/ui/container";
 const footerLinks = [
   { label: "Services", href: "/services" },
   { label: "About", href: "/about" },
-  { label: "Reviews", href: "/reviews" },
   { label: "Contact", href: "/contact" },
-  { label: "Get Quote", href: "/get-quote" },
+  { label: "Get Quote", href: "/contact" },
 ];
 
 export function SiteFooter() {
@@ -49,7 +48,7 @@ export function SiteFooter() {
             <nav className="mt-4 grid gap-3">
               {footerLinks.map((link) => (
                 <Link
-                  key={link.href}
+                  key={link.label}
                   href={link.href}
                   className="text-sm font-medium text-white/72 transition hover:text-white"
                 >
@@ -64,9 +63,9 @@ export function SiteFooter() {
               Contact
             </h2>
             <div className="mt-4 grid gap-3 text-sm text-white/72">
-              <a className="flex items-center gap-3 transition hover:text-white" href="tel:+10000000000">
+              <a className="flex items-center gap-3 transition hover:text-white" href="tel:+16513736692">
                 <Phone className="size-4 text-brand-accent" aria-hidden="true" />
-                (000) 000-0000
+                +1 (651) 373-6692
               </a>
               <a
                 className="flex items-center gap-3 transition hover:text-white"
@@ -79,10 +78,10 @@ export function SiteFooter() {
                 <MapPin className="size-4 text-brand-accent" aria-hidden="true" />
                 Local device repair specialists
               </span>
-              <a className="flex items-center gap-3 transition hover:text-white" href="#" aria-label="Smart Gadget Solution on Facebook">
+              <Link className="flex items-center gap-3 transition hover:text-white" href="/contact" aria-label="Contact Smart Gadget Solution">
                 <Share2 className="size-4 text-brand-accent" aria-hidden="true" />
-                Facebook
-              </a>
+                Contact Us
+              </Link>
             </div>
           </div>
         </div>

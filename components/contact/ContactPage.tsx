@@ -346,7 +346,7 @@ export function ContactPage() {
               <PhoneCall className="size-4" aria-hidden="true" />
               Call Now
             </Button>
-            <Button href="/get-quote" variant="secondary" showArrow>
+            <Button href="/contact" variant="secondary" showArrow>
               Get Free Quote
             </Button>
           </div>

@@ -39,10 +39,10 @@ const features = [
 ];
 
 const trustItems = [
+  { text: "10+ Years Experience", Icon: BadgeCheck },
   { text: "5000+ Devices Repaired", Icon: Wrench },
   { text: "98% Customer Satisfaction", Icon: Star },
-  { text: "Same-Day Service Available", Icon: Clock3 },
-  { text: "Friendly Customer Support", Icon: Headphones },
+  { text: "90-Day Warranty", Icon: ShieldCheck },
 ];
 
 export function WhyChooseUs() {
