@@ -2,25 +2,64 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #102033;
+  --brand-primary: #0a6eff;
+  --brand-dark-blue: #003c8f;
+  --brand-light: #f7faff;
+  --brand-white: #ffffff;
+  --brand-accent: #2ea8ff;
+  --brand-ink: #102033;
+  --brand-muted: #5d718a;
+  --brand-border: #dbe9ff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-dark-blue: var(--brand-dark-blue);
+  --color-brand-light: var(--brand-light);
+  --color-brand-white: var(--brand-white);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-muted: var(--brand-muted);
+  --color-brand-border: var(--brand-border);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --shadow-soft: 0 18px 60px rgb(10 110 255 / 0.11);
+  --shadow-glow: 0 16px 42px rgb(10 110 255 / 0.28);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: rgb(10 110 255 / 0.16);
+  color: var(--brand-dark-blue);
+}
+
+.bg-brand-gradient {
+  background-image: linear-gradient(135deg, var(--brand-primary), var(--brand-accent));
 }
