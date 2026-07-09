@@ -1,11 +1,7 @@
-"use client";
-
-import { motion } from "framer-motion";
 import {
   BadgeCheck,
   CheckCircle2,
   Clock3,
-  Headphones,
   ShieldCheck,
   Sparkles,
   Star,
@@ -48,13 +44,7 @@ const trustItems = [
 export function WhyChooseUs() {
   return (
     <Section className="bg-brand-light">
-      <motion.div
-        initial={{ opacity: 0, y: 18 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.35 }}
-        transition={{ duration: 0.55, ease: "easeOut" }}
-        className="mx-auto max-w-3xl text-center"
-      >
+      <div className="mx-auto max-w-3xl text-center">
         <h2 className="text-3xl font-bold tracking-normal text-brand-ink sm:text-4xl">
           Why Choose Smart Gadget Solution LLC?
         </h2>
@@ -62,17 +52,13 @@ export function WhyChooseUs() {
           We combine experienced technicians, quality parts, and outstanding
           customer service to deliver repairs you can trust.
         </p>
-      </motion.div>
+      </div>
 
       <div className="mt-12 grid items-stretch gap-6 lg:grid-cols-[1.12fr_0.88fr]">
         <div className="grid gap-5 sm:grid-cols-2">
-          {features.map(({ title, description, Icon }, index) => (
-            <motion.article
+          {features.map(({ title, description, Icon }) => (
+            <article
               key={title}
-              initial={{ opacity: 0, y: 22 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.25 }}
-              transition={{ duration: 0.45, delay: index * 0.06, ease: "easeOut" }}
               className="group rounded-[20px] border border-brand-border bg-white p-6 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:border-brand-primary/55 hover:shadow-[0_22px_70px_rgba(10,110,255,0.16)]"
             >
               <div className="flex size-13 items-center justify-center rounded-[18px] bg-brand-light text-brand-primary ring-1 ring-brand-primary/10 transition duration-300 group-hover:scale-105 group-hover:bg-brand-primary group-hover:text-white">
@@ -82,15 +68,11 @@ export function WhyChooseUs() {
               <p className="mt-3 text-sm leading-7 text-brand-muted">
                 {description}
               </p>
-            </motion.article>
+            </article>
           ))}
         </div>
 
-        <motion.aside
-          initial={{ opacity: 0, x: 24 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+        <aside
           className="relative overflow-hidden rounded-[20px] border border-brand-primary/15 bg-white p-6 shadow-soft sm:p-8"
         >
           <div className="absolute right-0 top-0 h-40 w-40 translate-x-14 -translate-y-14 rounded-full bg-brand-accent/18 blur-2xl" />
@@ -110,28 +92,20 @@ export function WhyChooseUs() {
             </p>
 
             <div className="mt-8 grid gap-3">
-              {trustItems.map(({ text, Icon }, index) => (
-                <motion.div
+              {trustItems.map(({ text, Icon }) => (
+                <div
                   key={text}
-                  initial={{ opacity: 0, y: 14 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.4 }}
-                  transition={{
-                    duration: 0.4,
-                    delay: 0.14 + index * 0.06,
-                    ease: "easeOut",
-                  }}
                   className="flex items-center gap-3 rounded-2xl border border-brand-border bg-brand-light/70 p-4"
                 >
                   <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-white text-brand-primary shadow-sm ring-1 ring-brand-primary/10">
                     <Icon className="size-5" aria-hidden="true" />
                   </span>
                   <span className="text-sm font-bold text-brand-ink">{text}</span>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
-        </motion.aside>
+        </aside>
       </div>
     </Section>
   );

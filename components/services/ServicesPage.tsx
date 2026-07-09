@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import {
   BatteryCharging,
   CheckCircle2,
@@ -129,26 +126,11 @@ export function ServicesPage() {
         className="relative isolate overflow-hidden bg-[radial-gradient(circle_at_top_left,_rgba(46,168,255,0.34),_transparent_34%),linear-gradient(135deg,_var(--brand-dark-blue)_0%,_var(--brand-primary)_55%,_var(--brand-accent)_100%)] py-0 text-white"
       >
         <div className="absolute inset-0 bg-[linear-gradient(120deg,_rgba(255,255,255,0.16),_transparent_38%,_rgba(255,255,255,0.1))]" />
-        <motion.div
-          aria-hidden="true"
-          className="absolute left-[7%] top-24 h-28 w-28 rounded-full border border-white/20 bg-white/10 blur-sm backdrop-blur-md"
-          animate={{ y: [0, -18, 0], opacity: [0.42, 0.72, 0.42] }}
-          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          aria-hidden="true"
-          className="absolute bottom-16 right-[12%] h-40 w-40 rounded-full border border-white/20 bg-white/10 blur-sm backdrop-blur-md"
-          animate={{ y: [0, 18, 0], opacity: [0.35, 0.65, 0.35] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        />
+        <div className="absolute left-[7%] top-24 h-28 w-28 rounded-full border border-white/20 bg-white/10 blur-sm backdrop-blur-md" aria-hidden="true" />
+        <div className="absolute bottom-16 right-[12%] h-40 w-40 rounded-full border border-white/20 bg-white/10 blur-sm backdrop-blur-md" aria-hidden="true" />
 
         <div className="relative z-10 mx-auto flex min-h-[58svh] w-full max-w-7xl items-center px-4 py-20 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, ease: "easeOut" }}
-            className="max-w-4xl"
-          >
+          <div className="max-w-4xl">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/22 bg-white/12 px-4 py-2 text-sm font-semibold text-white/88 shadow-soft backdrop-blur-xl">
               <Wrench className="size-4" aria-hidden="true" />
               Expert repair solutions
@@ -168,22 +150,15 @@ export function ServicesPage() {
                 Contact Us
               </Button>
             </div>
-          </motion.div>
+          </div>
         </div>
       </Section>
 
       <Section className="bg-white">
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.35 }}
-          transition={{ duration: 0.55, ease: "easeOut" }}
-        >
-          <SectionTitle
-            title="Complete Device Repair Services"
-            subtitle="Choose the service that fits your device. Every repair starts with clear diagnostics, transparent pricing, and careful workmanship."
-          />
-        </motion.div>
+        <SectionTitle
+          title="Complete Device Repair Services"
+          subtitle="Choose the service that fits your device. Every repair starts with clear diagnostics, transparent pricing, and careful workmanship."
+        />
 
         <div className="mt-14 grid gap-10">
           {services.map((service, index) => (
@@ -193,13 +168,7 @@ export function ServicesPage() {
       </Section>
 
       <Section className="bg-brand-light">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.35 }}
-          transition={{ duration: 0.55, ease: "easeOut" }}
-          className="mx-auto max-w-3xl rounded-[20px] border border-brand-primary/15 bg-white p-8 text-center shadow-soft sm:p-10"
-        >
+        <div className="mx-auto max-w-3xl rounded-[20px] border border-brand-primary/15 bg-white p-8 text-center shadow-soft sm:p-10">
           <h2 className="text-3xl font-bold tracking-normal text-brand-ink sm:text-4xl">
             Ready to repair your device?
           </h2>
@@ -212,7 +181,7 @@ export function ServicesPage() {
               Get Free Quote
             </Button>
           </div>
-        </motion.div>
+        </div>
       </Section>
     </>
   );
@@ -223,13 +192,7 @@ function ServiceDetail({ service, index }: { service: Service; index: number }) 
   const { Icon } = service;
 
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 26 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.55, ease: "easeOut" }}
-      className="rounded-[20px] border border-brand-border bg-white p-5 shadow-soft sm:p-6 lg:p-8"
-    >
+    <article className="rounded-[20px] border border-brand-border bg-white p-5 shadow-soft sm:p-6 lg:p-8">
       <div
         className={cn(
           "grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center",
@@ -281,18 +244,16 @@ function ServiceDetail({ service, index }: { service: Service; index: number }) 
         <div className={cn("relative", isReversed && "lg:order-1")}>
           <div className="relative min-h-80 overflow-hidden rounded-[20px] border border-brand-primary/15 bg-[radial-gradient(circle_at_center,_rgba(46,168,255,0.18),_transparent_58%),var(--brand-light)] p-6 shadow-soft">
             <div className="absolute inset-6 rounded-[18px] border border-white/70 bg-white/45" />
-            <motion.div
+            <div
               aria-hidden="true"
               className="absolute left-1/2 top-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-primary/18 blur-2xl"
-              animate={{ scale: [1, 1.14, 1], opacity: [0.42, 0.7, 0.42] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
             />
             <div className="relative flex min-h-68 items-center justify-center">
               <div className="flex size-32 items-center justify-center rounded-[2rem] bg-white text-brand-primary shadow-glow ring-1 ring-brand-primary/10">
                 <Icon className="size-16" aria-hidden="true" />
               </div>
               {service.accentIcons.map((AccentIcon, accentIndex) => (
-                <motion.div
+                <div
                   key={`${service.title}-${accentIndex}`}
                   className={cn(
                     "absolute flex size-16 items-center justify-center rounded-3xl border border-white/80 bg-white/80 text-brand-primary shadow-soft backdrop-blur-xl",
@@ -300,23 +261,14 @@ function ServiceDetail({ service, index }: { service: Service; index: number }) 
                     accentIndex === 1 && "right-5 top-12",
                     accentIndex === 2 && "bottom-5 left-1/2 -translate-x-1/2",
                   )}
-                  animate={{
-                    y: [0, accentIndex % 2 === 0 ? -10 : 10, 0],
-                    rotate: [0, accentIndex % 2 === 0 ? 2 : -2, 0],
-                  }}
-                  transition={{
-                    duration: 4.5 + accentIndex * 0.4,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
                 >
                   <AccentIcon className="size-7" aria-hidden="true" />
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
         </div>
       </div>
-    </motion.article>
+    </article>
   );
 }

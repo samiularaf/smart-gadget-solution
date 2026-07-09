@@ -1,7 +1,4 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
 import {
   ArrowRight,
   Gamepad2,
@@ -61,13 +58,7 @@ const services = [
 export function Services() {
   return (
     <Section className="bg-white">
-      <motion.div
-        initial={{ opacity: 0, y: 18 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.35 }}
-        transition={{ duration: 0.55, ease: "easeOut" }}
-        className="mx-auto max-w-3xl text-center"
-      >
+      <div className="mx-auto max-w-3xl text-center">
         <h2 className="text-3xl font-bold tracking-normal text-brand-ink sm:text-4xl">
           Expert Repair Services
         </h2>
@@ -75,16 +66,12 @@ export function Services() {
           We provide fast, reliable, and affordable repair solutions for your
           favorite devices.
         </p>
-      </motion.div>
+      </div>
 
       <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-        {services.map(({ title, href, description, Icon }, index) => (
-          <motion.article
+        {services.map(({ title, href, description, Icon }) => (
+          <article
             key={title}
-            initial={{ opacity: 0, y: 22 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.22 }}
-            transition={{ duration: 0.45, delay: index * 0.05, ease: "easeOut" }}
             className="group flex h-full flex-col rounded-[20px] border border-brand-border bg-white p-6 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:border-brand-primary/55 hover:shadow-[0_22px_70px_rgba(10,110,255,0.18)]"
           >
             <div className="flex size-14 items-center justify-center rounded-[18px] bg-brand-light text-brand-primary ring-1 ring-brand-primary/10 transition duration-300 group-hover:scale-105 group-hover:bg-brand-primary group-hover:text-white">
@@ -103,17 +90,11 @@ export function Services() {
               Learn More
               <ArrowRight className="size-4 transition duration-300 group-hover:translate-x-1.5" aria-hidden="true" />
             </Link>
-          </motion.article>
+          </article>
         ))}
       </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.45 }}
-        transition={{ duration: 0.45, ease: "easeOut" }}
-        className="mt-12 flex justify-center"
-      >
+      <div className="mt-12 flex justify-center">
         <Link
           href="/services"
           className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-brand-primary px-6 py-3 text-sm font-bold text-white shadow-glow transition duration-300 hover:-translate-y-0.5 hover:bg-brand-dark-blue"
@@ -121,7 +102,7 @@ export function Services() {
           View All Services
           <ArrowRight className="size-4" aria-hidden="true" />
         </Link>
-      </motion.div>
+      </div>
     </Section>
   );
 }

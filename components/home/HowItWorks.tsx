@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import {
   ClipboardCheck,
   MapPin,
@@ -57,40 +54,27 @@ const processSteps: ProcessStep[] = [
 export function HowItWorks() {
   return (
     <Section className="bg-white">
-      <motion.div
-        initial={{ opacity: 0, y: 18 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.35 }}
-        transition={{ duration: 0.55, ease: "easeOut" }}
-      >
+      <div>
         <SectionTitle
           title="How It Works"
           subtitle="Getting your device repaired is quick and easy."
         />
-      </motion.div>
+      </div>
 
       <div className="relative mt-14">
         <div className="absolute left-6 top-0 h-full w-px bg-brand-border lg:left-0 lg:top-16 lg:h-px lg:w-full" />
-        <motion.div
+        <div
           aria-hidden="true"
           className="absolute left-6 top-0 h-full w-px origin-top bg-brand-primary lg:hidden"
-          initial={{ scaleY: 0 }}
-          whileInView={{ scaleY: 1 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 1.1, ease: "easeOut" }}
         />
-        <motion.div
+        <div
           aria-hidden="true"
           className="absolute left-0 top-16 hidden h-px w-full origin-left bg-brand-primary lg:block"
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 1.1, ease: "easeOut" }}
         />
 
         <ol className="relative grid gap-5 lg:grid-cols-5">
-          {processSteps.map((item, index) => (
-            <ProcessCard key={item.title} item={item} index={index} />
+          {processSteps.map((item) => (
+            <ProcessCard key={item.title} item={item} />
           ))}
         </ol>
       </div>
@@ -98,17 +82,11 @@ export function HowItWorks() {
   );
 }
 
-function ProcessCard({ item, index }: { item: ProcessStep; index: number }) {
+function ProcessCard({ item }: { item: ProcessStep }) {
   const { Icon } = item;
 
   return (
-    <motion.li
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.48, delay: index * 0.08, ease: "easeOut" }}
-      className="group relative pl-16 lg:pl-0 lg:pt-24"
-    >
+    <li className="group relative pl-16 lg:pl-0 lg:pt-24">
       <div className="absolute left-0 top-0 z-10 flex size-12 items-center justify-center rounded-2xl border border-brand-primary/15 bg-white text-brand-primary shadow-soft transition duration-300 group-hover:-translate-y-1 group-hover:scale-105 group-hover:bg-brand-primary group-hover:text-white lg:left-1/2 lg:top-10 lg:-translate-x-1/2">
         <Icon className="size-6" aria-hidden="true" />
       </div>
@@ -127,6 +105,6 @@ function ProcessCard({ item, index }: { item: ProcessStep; index: number }) {
           {item.description}
         </p>
       </article>
-    </motion.li>
+    </li>
   );
 }

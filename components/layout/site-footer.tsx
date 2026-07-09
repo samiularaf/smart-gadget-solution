@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Mail, MapPin, Phone, Share2 } from "lucide-react";
 import { Container } from "@/components/ui/container";
+import { siteConfig } from "@/lib/site";
 
 const footerLinks = [
   { label: "Services", href: "/services" },
@@ -9,6 +10,8 @@ const footerLinks = [
   { label: "Contact", href: "/contact" },
   { label: "Get Quote", href: "/contact" },
 ];
+
+const copyrightYear = 2026;
 
 export function SiteFooter() {
   return (
@@ -45,12 +48,12 @@ export function SiteFooter() {
             <h2 className="text-sm font-bold uppercase tracking-wide text-white/55">
               Explore
             </h2>
-            <nav className="mt-4 grid gap-3">
+            <nav className="mt-4 grid gap-3" aria-label="Footer navigation">
               {footerLinks.map((link) => (
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="text-sm font-medium text-white/72 transition hover:text-white"
+                  className="text-sm font-medium text-white/72 transition hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                 >
                   {link.label}
                 </Link>
@@ -63,22 +66,29 @@ export function SiteFooter() {
               Contact
             </h2>
             <div className="mt-4 grid gap-3 text-sm text-white/72">
-              <a className="flex items-center gap-3 transition hover:text-white" href="tel:+16513736692">
+              <a
+                className="flex items-center gap-3 transition hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                href={siteConfig.phoneHref}
+              >
                 <Phone className="size-4 text-brand-accent" aria-hidden="true" />
-                +1 (651) 373-6692
+                {siteConfig.phoneDisplay}
               </a>
               <a
-                className="flex items-center gap-3 transition hover:text-white"
-                href="mailto:info@smartgadgetsolution.com"
+                className="flex items-center gap-3 transition hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                href={`mailto:${siteConfig.email}`}
               >
                 <Mail className="size-4 text-brand-accent" aria-hidden="true" />
-                info@smartgadgetsolution.com
+                {siteConfig.email}
               </a>
               <span className="flex items-center gap-3">
                 <MapPin className="size-4 text-brand-accent" aria-hidden="true" />
-                Local device repair specialists
+                {siteConfig.location}
               </span>
-              <Link className="flex items-center gap-3 transition hover:text-white" href="/contact" aria-label="Contact Smart Gadget Solution">
+              <Link
+                className="flex items-center gap-3 transition hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                href="/contact"
+                aria-label="Contact Smart Gadget Solution"
+              >
                 <Share2 className="size-4 text-brand-accent" aria-hidden="true" />
                 Contact Us
               </Link>
@@ -87,7 +97,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-sm text-white/55 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Smart Gadget Solution LLC.</p>
+          <p>© {copyrightYear} Smart Gadget Solution LLC.</p>
           <p>Premium repairs. Clear service. Better devices.</p>
         </div>
       </Container>
